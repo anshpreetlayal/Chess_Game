@@ -1,2 +1,3 @@
-public class ChessPiece {
+abstract  class ChessPiece {
+
 }
