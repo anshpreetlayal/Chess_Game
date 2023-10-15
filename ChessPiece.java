@@ -1,7 +1,11 @@
+public abstract class ChessPiece {
+    private String name;
+    private boolean isWhite; // or isBlack
 
-abstract class ChessPiece {
-    private boolean isWhite;
-    private boolean isBlack;
-    public abstract boolean isValidMove(Cell from, Cell to);
-
-}
+    public ChessPiece(String name, boolean isWhite) {
+        this.name = name;
+        this.isWhite = isWhite;
+    }
+    public boolean isWhite() {
+        return isWhite;
+    }
