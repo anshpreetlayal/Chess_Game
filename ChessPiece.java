@@ -9,3 +9,6 @@ public abstract class ChessPiece {
     public boolean isWhite() {
         return isWhite;
     }
+    public String getName() {
+        return name;
+    }
