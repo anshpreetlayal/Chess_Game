@@ -48,3 +48,7 @@ class Bishop extends ChessPiece {
     public Bishop(boolean isWhite) {
         super("Bishop", isWhite);
     }
+    public boolean isValidMove(Cell start, Cell end) {
+
+    }
+}
