@@ -22,3 +22,8 @@ class Pawn extends ChessPiece {
     public Pawn(boolean isWhite) {
         super("Pawn", isWhite);
     }
+    @Override
+    public boolean isValidMove(Cell start, Cell end) {
+
+    }
+}
