@@ -40,3 +40,7 @@ class Knight extends ChessPiece {
     public Knight(boolean isWhite) {
         super("Knight", isWhite);
     }
+    public boolean isValidMove(Cell start, Cell end) {
+
+    }
+}
