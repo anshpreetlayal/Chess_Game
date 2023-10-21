@@ -10,3 +10,15 @@ public abstract class ChessPiece {
     public boolean isWhite() {
         return isWhite;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public abstract boolean isValidMove(Cell start, Cell end);
+}
+
+class Pawn extends ChessPiece {
+    public Pawn(boolean isWhite) {
+        super("Pawn", isWhite);
+    }
