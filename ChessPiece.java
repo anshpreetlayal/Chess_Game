@@ -27,3 +27,7 @@ class Pawn extends ChessPiece {
 
     }
 }
+class Rook extends ChessPiece {
+    public Rook(boolean isWhite) {
+        super("Rook", isWhite);
+    }
