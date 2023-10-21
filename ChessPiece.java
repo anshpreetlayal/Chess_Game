@@ -35,3 +35,8 @@ class Rook extends ChessPiece {
 
     }
 }
+
+class Knight extends ChessPiece {
+    public Knight(boolean isWhite) {
+        super("Knight", isWhite);
+    }
