@@ -32,9 +32,6 @@ class Rook extends ChessPiece {
         super("Rook", isWhite);
     }
     public boolean isValidMove(Cell start, Cell end) {
-        // Implement the valid moves for a Rook here
-        // A Rook can move horizontally or vertically any number of squares.
-        // Check if the move is along a rank or a file.
-        // Return true if the move is valid, false otherwise.
+
     }
 }
