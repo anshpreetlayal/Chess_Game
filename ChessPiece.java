@@ -44,3 +44,7 @@ class Knight extends ChessPiece {
 
     }
 }
+class Bishop extends ChessPiece {
+    public Bishop(boolean isWhite) {
+        super("Bishop", isWhite);
+    }
