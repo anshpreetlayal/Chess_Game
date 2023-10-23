@@ -11,3 +11,6 @@ public class ChessGame {
         blackPlayer = new Player("Black");
         currentPlayer = whitePlayer;
     }
+    public void startGame() {
+        boolean isGameOver = false;
+        Scanner scanner = new Scanner(System.in);
