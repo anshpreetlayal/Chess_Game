@@ -25,3 +25,4 @@ public class ChessGame {
 
                 if (isCheckmate(currentPlayer)) {
                     System.out.println("Checkmate! " + currentPlayer.getName() + " wins!");
+                    isGameOver = true;
