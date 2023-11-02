@@ -40,3 +40,25 @@ public class ChessGame {
         }
         scanner.close();
     }
+    private boolean isValidMove(String move) {
+
+        return false;
+    }
+
+    private boolean isCheckmate(Player player) {
+        // Implement your checkmate detection logic here
+        // Check if the player is in checkmate
+        return false; // Placeholder
+    }
+
+    private boolean isStalemate(Player player) {
+        // Implement your stalemate detection logic here
+        // Check if the game is in stalemate
+        return false; // Placeholder
+    }
+
+    public static void main(String[] args) {
+        ChessGame chessGame = new ChessGame();
+        chessGame.startGame();
+    }
+}
