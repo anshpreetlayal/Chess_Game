@@ -27,3 +27,4 @@ public class ChessGame {
                     System.out.println("Checkmate! " + currentPlayer.getName() + " wins!");
                     isGameOver = true;
                 } else if (isStalemate(currentPlayer)) {
+                    System.out.println("Stalemate! The game is a draw.");
