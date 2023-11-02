@@ -31,6 +31,12 @@ public class ChessGame {
                     isGameOver = true;
                 } else {
 
-
                     currentPlayer = (currentPlayer == whitePlayer) ? blackPlayer : whitePlayer;
 
+                }
+            } else {
+                System.out.println("Invalid move. Please try again.");
+            }
+        }
+        scanner.close();
+    }
