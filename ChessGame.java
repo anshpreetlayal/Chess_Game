@@ -29,4 +29,5 @@ public class ChessGame {
                 } else if (isStalemate(currentPlayer)) {
                     System.out.println("Stalemate! The game is a draw.");
                     isGameOver = true;
+                } else {
 
