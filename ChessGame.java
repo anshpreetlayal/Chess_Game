@@ -46,9 +46,8 @@ public class ChessGame {
     }
 
     private boolean isCheckmate(Player player) {
-        // Implement your checkmate detection logic here
-        // Check if the player is in checkmate
-        return false; // Placeholder
+
+
     }
 
     private boolean isStalemate(Player player) {
