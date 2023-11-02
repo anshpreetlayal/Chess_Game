@@ -51,9 +51,7 @@ public class ChessGame {
     }
 
     private boolean isStalemate(Player player) {
-        // Implement your stalemate detection logic here
-        // Check if the game is in stalemate
-        return false; // Placeholder
+
     }
 
     public static void main(String[] args) {
