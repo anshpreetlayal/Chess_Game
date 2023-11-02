@@ -19,3 +19,8 @@ public class ChessGame {
 
             System.out.print(currentPlayer.getName() + "'s turn. Enter your move (e.g., 'a2 a4'): ");
             String move = scanner.nextLine();
+            if (isValidMove(move)) {
+                chessBoard.makeMove(move);
+
+
+                if (isCheckmate(currentPlayer)) {
