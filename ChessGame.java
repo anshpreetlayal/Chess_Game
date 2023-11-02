@@ -31,3 +31,6 @@ public class ChessGame {
                     isGameOver = true;
                 } else {
 
+
+                    currentPlayer = (currentPlayer == whitePlayer) ? blackPlayer : whitePlayer;
+
