@@ -6,4 +6,5 @@ class Piece {
     private PieceType type;
     private boolean isWhite;
 
+
 }
