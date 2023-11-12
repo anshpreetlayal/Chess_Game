@@ -15,4 +15,7 @@ class Piece {
         return type;
     }
 
+    public boolean isWhite(){
+        return isWhite;
+    }
 }
