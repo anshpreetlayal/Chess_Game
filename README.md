@@ -5,15 +5,6 @@
 
 This project is a simple implementation of a chess game in Java. It allows two players to make moves on a command-line interface.
 
-## Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [File Structure](#file-structure)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Overview
 
 This project simulates a basic chess game allowing two players to take turns making moves. The game enforces basic rules such as piece movements, captures, and rudimentary checkmate conditions.
@@ -35,7 +26,7 @@ The project consists of the following classes:
 - Individual Piece Classes: `Pawn`, `Rook`, `Knight`, `Bishop`, `Queen`, `King` for specific piece logic.
 - `Cell`: Represents a cell on the chessboard.
 
-## Getting Started
+
 
 ### Prerequisites
 
@@ -47,11 +38,6 @@ The project consists of the following classes:
 1. Clone this repository.
 2. Open the project in your preferred IDE.
 
-## Usage
-
-1. Run the `ChessGame.java` file to start the game.
-2. Follow the command-line instructions to input moves in the format, e.g., 'a2 a4'.
-3. Take turns between players and play until a win condition is met.
 
 ## Contributing
 
