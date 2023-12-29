@@ -57,5 +57,18 @@ public class ChessBoard {
             spot.setPiece(piece);
         }
     }
+    public boolean movePiece(int startX, char startY, int endX, char endY) {
+        Spot startSpot = getSpot(startX, startY);
+        Spot endSpot = getSpot(endX, endY);
 
+        if (startSpot != null && endSpot != null) {
+            ChessPiece piece = startSpot.getPiece();
+            if (piece != null && piece.isValidMove(this, startSpot, endSpot)) {
+                endSpot.setPiece(piece);
+                startSpot.setPiece(null);
+                return true;
+            }
+        }
+        return false;
+    }
 }
