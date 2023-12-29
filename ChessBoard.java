@@ -56,4 +56,6 @@ public class ChessBoard {
         if (spot != null) {
             spot.setPiece(piece);
         }
-    }}
+    }
+
+}
