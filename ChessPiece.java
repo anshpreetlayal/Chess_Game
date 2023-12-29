@@ -1,8 +1,22 @@
 public abstract class ChessPiece{
-    boolean isWHite = false;
     boolean isCaptured = false;
+    boolean isWhite = false;
 
-    public void setWHite(boolean WHite) {
-        isWHite = WHite;
+    public boolean isWhite() {
+        return this.isWhite;
     }
+
+    public void setIsWhite(boolean isWhite) {
+        this.isWhite = isWhite;
+    }
+
+    public boolean isCaptured() {
+        return this.isCaptured;
+    }
+
+    public void capture() {
+        this.isCaptured = true;
+    }
+
 }
+
