@@ -71,4 +71,18 @@ public class ChessBoard {
         }
         return false;
     }
+    public void displayBoard() {
+        for (int i = 8; i >= 1; i--) {
+            for (char j = 'A'; j <= 'H'; j++) {
+                Spot spot = getSpot(i, j);
+                ChessPiece piece = spot.getPiece();
+                if (piece != null) {
+                    System.out.print(piece.getSymbol() + " ");
+                } else {
+                    System.out.print("- ");
+                }
+            }
+            System.out.println();
+        }
+    }
 }
