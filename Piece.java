@@ -1,8 +1,8 @@
-public abstract class ChessPiece {
+public abstract class Piece {
     private boolean isCaptured = false;
     private boolean isWhite = false;
 
-    public ChessPiece(boolean isWhite) {
+    public Piece(boolean isWhite) {
         this.isWhite = isWhite;
     }
 

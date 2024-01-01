@@ -21,9 +21,9 @@ This project simulates a basic chess game allowing two players to take turns mak
 The project consists of the following classes:
 
 - GridBlock: Represents a block in an 8×8 grid, optionally containing a piece.
-- ChessPiece: Serves as the fundamental element within the system, placed on a GridBlock. This class is abstract. The derived classes (PawnPiece, KingPiece, QueenPiece, RookPiece, KnightPiece, BishopPiece) implement the abstract operations.
+- Piece: Serves as the fundamental element within the system, placed on a GridBlock. This class is abstract. The derived classes (PawnPiece, KingPiece, QueenPiece, RookPiece, KnightPiece, BishopPiece) implement the abstract operations.
 - ChessBoard: A collection of 8×8 boxes encompassing all active chess pieces.
-- Participant: Represents one of the players engaged in the game.
+- Player: Represents one of the players engaged in the game.
 - GameMove: Signifies a move in the game, holding information about the starting and ending grid block. Additionally, it tracks the player responsible for the move.
 - ChessGame: This class governs the game's progression. It manages all game moves, identifies the current turn's player, and records the game's final outcome.
 

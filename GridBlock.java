@@ -1,18 +1,18 @@
 public class GridBlock {
-    private ChessPiece piece;
+    private Piece piece;
     private int x;
     private int y;
 
-    public GridBlock(int x, int y, ChessPiece piece) {
+    public GridBlock(int x, int y, Piece piece) {
         this.piece = piece;
         this.x = x;
         this.y = y;
     }
-    public ChessPiece getPiece() {
+    public Piece getPiece() {
         return this.piece;
     }
 
-    public void setPiece(ChessPiece piece) {
+    public void setPiece(Piece piece) {
         this.piece = piece;
     }
 

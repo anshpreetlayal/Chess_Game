@@ -1,4 +1,4 @@
-public class King extends ChessPiece {
+public class King extends Piece {
     private boolean hasMoved = false;
 
     public King(boolean isWhite) {

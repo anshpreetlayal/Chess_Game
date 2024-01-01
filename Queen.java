@@ -1,4 +1,4 @@
-public class Queen extends ChessPiece {
+public class Queen extends Piece {
 
     public Queen(boolean isWhite) {
         super(isWhite);

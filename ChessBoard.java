@@ -51,7 +51,7 @@ public class ChessBoard {
         return board.get(key);
     }
 
-    public void placePiece(ChessPiece piece, int x, char y) {
+    public void placePiece(Piece piece, int x, char y) {
         Spot spot = getSpot(x, y);
         if (spot != null) {
             spot.setPiece(piece);
@@ -62,7 +62,7 @@ public class ChessBoard {
         Spot endSpot = getSpot(endX, endY);
 
         if (startSpot != null && endSpot != null) {
-            ChessPiece piece = startSpot.getPiece();
+            Piece piece = startSpot.getPiece();
             if (piece != null && piece.isValidMove(this, startSpot, endSpot)) {
                 endSpot.setPiece(piece);
                 startSpot.setPiece(null);
@@ -75,7 +75,7 @@ public class ChessBoard {
         for (int i = 8; i >= 1; i--) {
             for (char j = 'A'; j <= 'H'; j++) {
                 Spot spot = getSpot(i, j);
-                ChessPiece piece = spot.getPiece();
+                Piece piece = spot.getPiece();
                 if (piece != null) {
                     System.out.print(piece.getSymbol() + " ");
                 } else {
