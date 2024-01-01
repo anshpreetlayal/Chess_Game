@@ -24,4 +24,6 @@ public abstract class ChessPiece {
     public void release() {
         this.isCaptured = false;
     }
+
+    public abstract  boolean isValidMove(ChessBoard board, Spot start, Spot end);
 }
