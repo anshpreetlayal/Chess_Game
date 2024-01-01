@@ -5,6 +5,7 @@ public abstract class ChessPiece {
     public ChessPiece(boolean isWhite) {
         this.isWhite = isWhite;
     }
+
     public boolean isWhite() {
         return this.isWhite;
     }
@@ -25,5 +26,8 @@ public abstract class ChessPiece {
         this.isCaptured = false;
     }
 
-    public abstract  boolean isValidMove(ChessBoard board, Spot start, Spot end);
+    public abstract boolean isValidMove(ChessBoard board, Spot start, Spot end);
+
+    public abstract boolean isValidMove(ChessBoard board, GridBlock start, GridBlock end);
 }
+
