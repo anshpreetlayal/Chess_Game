@@ -1,6 +1,6 @@
-public class Queen extends Piece {
+public class Bishop extends Piece {
 
-    public Queen(boolean isWhite) {
+    public Bishop(boolean isWhite) {
         super(isWhite);
     }
 
@@ -9,17 +9,16 @@ public class Queen extends Piece {
         return false;
     }
 
-
     @Override
     public boolean isValidMove(Board board, GridBlock start, GridBlock end) {
-        if () {
+        if (start == null || end == null) {
             return false;
         }
 
         int deltaX = Math.abs(start.getX() - end.getX());
         int deltaY = Math.abs(start.getY() - end.getY());
 
-        // Queen can move horizontally, vertically, or diagonally
-        return deltaX == 0 || deltaY == 0 || deltaX == deltaY;
+        // Bishop can move diagonally (equal deltaX and deltaY)
+        return deltaX == deltaY;
     }
 }
