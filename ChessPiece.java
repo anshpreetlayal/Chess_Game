@@ -5,4 +5,23 @@ public abstract class ChessPiece {
     public ChessPiece(boolean isWhite) {
         this.isWhite = isWhite;
     }
+    public boolean isWhite() {
+        return this.isWhite;
+    }
+
+    public boolean isBlack() {
+        return !this.isWhite;
+    }
+
+    public boolean isCaptured() {
+        return this.isCaptured;
+    }
+
+    public void capture() {
+        this.isCaptured = true;
+    }
+
+    public void release() {
+        this.isCaptured = false;
+    }
 }
