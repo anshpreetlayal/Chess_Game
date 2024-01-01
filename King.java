@@ -5,6 +5,12 @@ public class King extends Piece {
         super(isWhite);
     }
 
+    @Override
+    public boolean isValidMove(Board board, Spot start, Spot end) {
+        // Implement the logic for Spot parameters if necessary
+        return false; // Replace with actual logic
+    }
+
     public boolean hasMoved() {
         return this.hasMoved;
     }
@@ -13,16 +19,4 @@ public class King extends Piece {
         this.hasMoved = true;
     }
 
-    @Override
-    public boolean isValidMove(Board board, GridBlock start, GridBlock end) {
-        if (!super.isValidMove(board, start, end)) {
-            return false;
-        }
-
-        int deltaX = Math.abs(start.getX() - end.getX());
-        int deltaY = Math.abs(start.getY() - end.getY());
-
-        // King can move one square in any direction
-        return (deltaX <= 1 && deltaY <= 1);
-    }
 }
