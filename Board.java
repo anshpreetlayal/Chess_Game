@@ -1,10 +1,10 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class ChessBoard {
+public class Board {
     private Map<String, Spot> board;
 
-    public ChessBoard() {
+    public Board() {
         this.board = new HashMap<>();
         initializeBoard();
         initializePieces();

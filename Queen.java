@@ -6,7 +6,7 @@ public class Queen extends Piece {
 
 
     @Override
-    public boolean isValidMove(ChessBoard board, GridBlock start, GridBlock end) {
+    public boolean isValidMove(Board board, GridBlock start, GridBlock end) {
         if () {
             return false;
         }

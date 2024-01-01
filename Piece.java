@@ -26,8 +26,8 @@ public abstract class Piece {
         this.isCaptured = false;
     }
 
-    public abstract boolean isValidMove(ChessBoard board, Spot start, Spot end);
+    public abstract boolean isValidMove(Board board, Spot start, Spot end);
 
-    public abstract boolean isValidMove(ChessBoard board, GridBlock start, GridBlock end);
+    public abstract boolean isValidMove(Board board, GridBlock start, GridBlock end);
 }
 

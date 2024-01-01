@@ -14,7 +14,7 @@ public class King extends Piece {
     }
 
     @Override
-    public boolean isValidMove(ChessBoard board, GridBlock start, GridBlock end) {
+    public boolean isValidMove(Board board, GridBlock start, GridBlock end) {
         if (!super.isValidMove(board, start, end)) {
             return false;
         }
