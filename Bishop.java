@@ -1,5 +1,3 @@
-package ChessPieces;
-
 public class Bishop extends Piece {
 
     public Bishop(boolean isWhite) {
@@ -20,7 +18,7 @@ public class Bishop extends Piece {
         int deltaX = Math.abs(start.getX() - end.getX());
         int deltaY = Math.abs(start.getY() - end.getY());
 
-        // ChessPieces.Bishop can move diagonally (equal deltaX and deltaY)
+        // Bishop can move diagonally (equal deltaX and deltaY)
         return deltaX == deltaY;
     }
 }
