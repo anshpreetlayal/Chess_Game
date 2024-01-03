@@ -1,5 +1,3 @@
-package ChessPieces;
-
 public class King extends Piece {
     private boolean hasMoved = false;
 
@@ -29,7 +27,7 @@ public class King extends Piece {
         int deltaX = Math.abs(start.getX() - end.getX());
         int deltaY = Math.abs(start.getY() - end.getY());
 
-        // ChessPieces.King can move one square in any direction
+        // King can move one square in any direction
         return (deltaX <= 1 && deltaY <= 1);
     }
 }
