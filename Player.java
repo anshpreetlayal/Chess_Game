@@ -8,5 +8,19 @@ public class Player {
         this.color = color;
     }
 
-    // Getters and setters for name and color
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
 }
