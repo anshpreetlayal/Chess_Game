@@ -10,5 +10,19 @@ public abstract class Piece {
     // Abstract method to be implemented by specific piece classes
     public abstract boolean isValidMove(Square destination);
 
+    public String getColor() {
+        return color;
+    }
 
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public Square getCurrentPosition() {
+        return currentPosition;
+    }
+
+    public void setCurrentPosition(Square currentPosition) {
+        this.currentPosition = currentPosition;
+    }
 }
