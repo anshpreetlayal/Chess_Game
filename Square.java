@@ -1,26 +1,22 @@
-// Square class represents a square on the chessboard
 public class Square {
     private int row;
     private int col;
+    private Piece piece;
 
-    public Square(int row, int col) {
+    public Square(int row, int col, Piece piece) {
         this.row = row;
         this.col = col;
+        this.setPiece(piece);
     }
 
-    public int getCol() {
-        return col;
+    public Piece getPiece() {
+        return piece;
     }
 
-    public void setCol(int col) {
-        this.col = col;
-    }
-
-    public int getRow() {
-        return row;
-    }
-
-    public void setRow(int row) {
-        this.row = row;
+    public void setPiece(Piece piece) {
+        this.piece = piece;
+        if (piece != null) {
+            piece.setCurrentPosition(this);
+        }
     }
 }
