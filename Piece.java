@@ -42,4 +42,6 @@ public abstract class Piece {
     public void setKilled(boolean isKilled) {
         this.isKilled = isKilled;
     }
+    public abstract boolean canMove(Board board, Square start, Square end);
+
 }
