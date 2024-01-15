@@ -4,9 +4,14 @@ public class Bishop extends Piece{
         super(color, currentPosition);
     }
 
+
     @Override
     public boolean isValidMove(Square destination) {
-        return false;
+        int rowDiff = Math.abs(destination.getRow() - getCurrentPosition().getRow());
+        int colDiff = Math.abs(destination.getCol() - getCurrentPosition().getCol());
+
+        // Bishop can move diagonally any number of squares
+        return rowDiff == colDiff;
     }
 
     @Override
