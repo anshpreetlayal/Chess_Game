@@ -1,4 +1,5 @@
 public class King extends Piece {
+    private static final Square currentPosition = ;
     private boolean castlingDone = false;
 
     public King(String isWhite) {
