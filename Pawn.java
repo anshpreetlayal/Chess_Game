@@ -1,5 +1,5 @@
 public class Pawn extends Piece {
-    public Pawn(String color, Square currentPosition) {
+    public Pawn(String color) {
         super(color);
     }
 
