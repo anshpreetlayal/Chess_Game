@@ -1,7 +1,7 @@
 public class Queen extends Piece{
 
     public Queen(String color, Square currentPosition) {
-        super(color);
+        super(color, currentPosition);
     }
 
     public boolean isValidMove(Square destination) {

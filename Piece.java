@@ -4,9 +4,9 @@ public abstract class Piece {
     private boolean isKilled = false;
     private boolean isWhite = false;
 
-    public Piece(String color) {
+    public Piece(String color, Square currentPosition) {
         this.color = color;
-        this.currentPosition = currentPosition;
+        this.currentPosition = this.currentPosition;
         this.isWhite = isWhite;
     }
     public abstract boolean isValidMove(Square destination);

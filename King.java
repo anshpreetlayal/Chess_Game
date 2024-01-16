@@ -2,7 +2,7 @@ public class King extends Piece {
     private boolean castlingDone = false;
 
     public King(String isWhite) {
-        super(isWhite);
+        super(isWhite, currentPosition);
     }
 
     public boolean isCastlingDone() {
