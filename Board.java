@@ -4,4 +4,11 @@ public class Board {
     public Board() {
     }
 
+    public Square[][] getSquares() {
+        return squares;
+    }
+
+    public void setSquares(Square[][] squares) {
+        this.squares = squares;
+    }
 }
