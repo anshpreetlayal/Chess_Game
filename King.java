@@ -1,7 +1,7 @@
 public class King extends Piece {
     private boolean castlingDone = false;
 
-    public King(boolean isWhite) {
+    public King(String isWhite) {
         super(isWhite);
     }
 

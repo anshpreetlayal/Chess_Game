@@ -1,7 +1,7 @@
 public class Queen extends Piece{
 
     public Queen(String color, Square currentPosition) {
-        super(color, currentPosition);
+        super(color);
     }
 
     public boolean isValidMove(Square destination) {
@@ -13,6 +13,27 @@ public class Queen extends Piece{
     }
     @Override
     public boolean canMove(Board board, Square start, Square end) {
-        return false;
+        // Check if the destination square is a valid move for the Queen
+        if (!isValidMove(end)) {
+            return false;
+        }
+
+        // Check if there are no pieces in the path of the Queen
+        int rowDirection = Integer.compare(end.getRow(), start.getRow());
+        int colDirection = Integer.compare(end.getCol(), start.getCol());
+
+        int currentRow = start.getRow() + rowDirection;
+        int currentCol = start.getCol() + colDirection;
+
+        while (currentRow != end.getRow() || currentCol != end.getCol()) {
+            if (board.getSquare(currentRow, currentCol).getPiece() != null) {
+                // There is a piece in the path
+                return false;
+            }
+            currentRow += rowDirection;
+            currentCol += colDirection;
+        }
+
+        return true;
     }
 }

@@ -1,7 +1,7 @@
 public class Bishop extends Piece{
 
     public Bishop(String color, Square currentPosition) {
-        super(color, currentPosition);
+        super(color);
     }
 
 

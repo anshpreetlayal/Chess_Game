@@ -4,7 +4,7 @@ public abstract class Piece {
     private boolean isKilled = false;
     private boolean isWhite = false;
 
-    public Piece(String color, Square currentPosition) {
+    public Piece(String color) {
         this.color = color;
         this.currentPosition = currentPosition;
         this.isWhite = isWhite;
