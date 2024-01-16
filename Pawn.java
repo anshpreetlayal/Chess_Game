@@ -1,4 +1,6 @@
 public class Pawn extends Piece {
+   // private static final Square currentPosition = ;
+
     public Pawn(String color) {
         super(color, currentPosition);
     }
