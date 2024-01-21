@@ -31,18 +31,6 @@ public class Game {
         displayResult();
     }
 
-    private void displayResult() {
-    }
-
-    private void switchPlayer() {
-    }
-
-    private void displayBoard() {
-    }
-
-    private boolean isGameOver() {
-    }
-
     private void takeTurn() {
         Scanner scanner = new Scanner(System.in);
         Square startSquare, endSquare;
@@ -74,5 +62,23 @@ public class Game {
         startSquare.setPiece(null);
     }
 
+    private void switchPlayer() {
+        currentPlayer = (currentPlayer == player1) ? player2 : player1;
+    }
 
+    private boolean isGameOver() {
+        // have to implement the rules
+        return false;
+    }
+
+    private void displayBoard() {
+        // have to Implement board display logic
+        //  board.getSquares() to access the squares
+        System.out.println("Current Board:");
+    }
+
+    private void displayResult() {
+        // have to Implement result display logic
+        System.out.println("Game Over! Display result here.");
+    }
 }
