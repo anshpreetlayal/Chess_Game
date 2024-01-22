@@ -1,9 +1,8 @@
 public class King extends Piece {
-  //  private static final Square currentPosition =;
     private boolean castlingDone = false;
 
-    public King(String isWhite) {
-        super(isWhite, currentPosition);
+    public King(String color, Square currentPosition) {
+        super(color, currentPosition);
     }
 
     public boolean isCastlingDone() {
@@ -16,27 +15,29 @@ public class King extends Piece {
 
     @Override
     public boolean isValidMove(Square destination) {
-        return false;
+        int rowDiff = Math.abs(destination.getRow() - getCurrentPosition().getRow());
+        int colDiff = Math.abs(destination.getCol() - getCurrentPosition().getCol());
+
+        // King can move one square in any direction
+        return rowDiff <= 1 && colDiff <= 1;
     }
 
     @Override
     public boolean canMove(Board board, Square start, Square end) {
-        // We can't move the piece to a square that
-        // has a piece of the same color
-        if (end.getPiece() != null && end.getPiece().isWhite() == this.isWhite()) {
+        // Check if the destination square is a valid move for the King
+        if (!isValidMove(end)) {
             return false;
         }
 
-        int rowDiff = Math.abs(start.getRow() - end.getRow());
-        int colDiff = Math.abs(start.getCol() - end.getCol());
-
-        if (rowDiff + colDiff == 1) {
-            // Check if this move will not result in the king
-            // being attacked, if so, return true
-            return true;
+        // Check if there are no pieces in the path of the King
+        if (end.getPiece() != null && end.getPiece().isWhite() == this.isWhite()) {
+            return false; // Cannot capture a piece of the same color
         }
 
-        return isValidCastling(board, start, end);
+        // Additional logic for specific rules related to moving the King on the board
+        // Implement as needed based on the specific rules of chess
+
+        return true;
     }
 
     private boolean isValidCastling(Board board, Square start, Square end) {
@@ -51,11 +52,12 @@ public class King extends Piece {
         // in the squares between the king and rook, and if the squares the king crosses
         // during castling are not under attack.
 
-        return true;
+        return true; // Placeholder - replace with actual implementation
     }
 
     public boolean isCastlingMove(Square start, Square end) {
-
-        return false;
+        // Check if the starting and ending position are correct for castling
+        // Implement based on the specific rules of chess
+        return false; // Placeholder - replace with actual implementation
     }
 }
