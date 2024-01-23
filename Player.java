@@ -1,9 +1,8 @@
-// Player class represents a player in the chess game
 public class Player {
     private String name;
-    private String color;
+    private PlayerColor color;
 
-    public Player(String name, String color) {
+    public Player(String name, PlayerColor color) {
         this.name = name;
         this.color = color;
     }
@@ -16,11 +15,16 @@ public class Player {
         this.name = name;
     }
 
-    public String getColor() {
+    public PlayerColor getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(PlayerColor color) {
         this.color = color;
     }
+}
+
+// Enum to represent player colors
+enum PlayerColor {
+    WHITE, BLACK
 }
