@@ -6,7 +6,7 @@ public class Square {
     public Square(int row, int col, Piece piece) {
         this.row = row;
         this.col = col;
-        this.setPiece(piece);
+        setPiece(piece);
     }
 
     public Piece getPiece() {
