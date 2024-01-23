@@ -26,4 +26,30 @@ public class Board {
         return row >= 0 && row < squares.length && col >= 0 && col < squares[0].length;
     }
 
+    public void placePiece(Piece piece, int row, int col) {
+        if (isValidPosition(row, col)) {
+            squares[row][col].setPiece(piece);
+            piece.setCurrentPosition(squares[row][col]);
+        }
+    }
+
+    public void removePiece(int row, int col) {
+        if (isValidPosition(row, col)) {
+            squares[row][col].setPiece(null);
+        }
+    }
+
+    public void displayBoard() {
+        for (Square[] row : squares) {
+            for (Square square : row) {
+                Piece piece = square.getPiece();
+                if (piece != null) {
+                    System.out.print(piece.getColor().charAt(0) + " "); // Display the first letter of color
+                } else {
+                    System.out.print("- ");
+                }
+            }
+            System.out.println();
+        }
+    }
 }

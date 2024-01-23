@@ -1,14 +1,16 @@
 public abstract class Piece {
+    private boolean isWhite;
     private String color;
     private Square currentPosition;
     private boolean isKilled = false;
-    private boolean isWhite = false;
 
     public Piece(String color, Square currentPosition) {
         this.color = color;
-        this.currentPosition = this.currentPosition;
-        this.isWhite = isWhite;
+        this.currentPosition = currentPosition;
+        // Derive isWhite from the color
+        this.isWhite = "white".equalsIgnoreCase(color);
     }
+
     public abstract boolean isValidMove(Square destination);
 
     public String getColor() {
@@ -42,6 +44,7 @@ public abstract class Piece {
     public void setKilled(boolean isKilled) {
         this.isKilled = isKilled;
     }
-    public abstract boolean canMove(Board board, Square start, Square end);
 
+    public abstract boolean canMove(Board board, Square start, Square end);
+}
 }
