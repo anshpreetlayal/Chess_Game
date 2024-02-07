@@ -8,7 +8,16 @@ public class Pawn extends Piece {
 
     @Override
     public boolean isValidMove(Square destination) {
-        return false;
+        int rowDiff = Math.abs(destination.getRow() - getCurrentPosition().getRow());
+        int colDiff = Math.abs(destination.getCol() - getCurrentPosition().getCol());
+
+        // Pawn can move forward by one square
+        // or diagonally forward by one square to capture an opponent's piece
+        if (getColor().equalsIgnoreCase("white")) {
+            return (rowDiff == 1 && colDiff == 0) || (rowDiff == 1 && colDiff == 1);
+        } else {
+            return (rowDiff == -1 && colDiff == 0) || (rowDiff == -1 && colDiff == 1);
+        }
     }
 
     @Override
