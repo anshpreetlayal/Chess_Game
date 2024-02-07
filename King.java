@@ -11,11 +11,6 @@ public class King extends Piece {
         return this.castlingDone;
     }
 
-    public void setCastlingDone(boolean castlingDone) {
-
-        this.castlingDone = castlingDone;
-    }
-
     @Override
     public boolean isValidMove(Square destination) {
         int rowDiff = Math.abs(destination.getRow() - getCurrentPosition().getRow());
@@ -41,21 +36,6 @@ public class King extends Piece {
         // Implement as needed based on the specific rules of chess
 
         return true;
-    }
-
-    private boolean isValidCastling(Board board, Square start, Square end) {
-        if (this.isCastlingDone()) {
-            return false;
-        }
-
-        // Logic for determining if castling is valid
-        // Implement based on the specific rules of chess
-
-        // Example: Check if the rook is in the correct position, if there are no pieces
-        // in the squares between the king and rook, and if the squares the king crosses
-        // during castling are not under attack.
-
-        return true; // Placeholder - replace with actual implementation
     }
 
     public boolean isCastlingMove(Square start, Square end) {

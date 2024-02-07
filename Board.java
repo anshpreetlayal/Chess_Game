@@ -44,7 +44,7 @@ public class Board {
             for (Square square : row) {
                 Piece piece = square.getPiece();
                 if (piece != null) {
-                    System.out.print(piece.getColor().charAt(0) + " "); // Display the first letter of color
+                    System.out.print(piece.getColor().charAt(0) + " ");
                 } else {
                     System.out.print("- ");
                 }

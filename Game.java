@@ -48,11 +48,13 @@ public class Game {
             endSquare = board.getSquare(endRow, endCol);
 
             if (startSquare == null || endSquare == null) {
-                System.out.println("Invalid input. Please try again.");
-            } else if (startSquare.getPiece() == null || !startSquare.getPiece().isWhite() == currentPlayer.isWhite()) {
-                System.out.println("Invalid move. Choose a square with your own piece.");
+                System.out.println("Invalid input. Please enter valid row and column numbers.");
+            } else if (startSquare.getPiece() == null) {
+                System.out.println("There is no piece at the selected starting square. Please choose again.");
+            } else if (startSquare.getPiece().isWhite() != currentPlayer.isWhite()) {
+                System.out.println("You can only move your own pieces. Please select a square with your piece.");
             } else if (!startSquare.getPiece().canMove(board, startSquare, endSquare)) {
-                System.out.println("Invalid move. Please try again.");
+                System.out.println("Invalid move for the selected piece. Please try again.");
             }
         } while (startSquare == null || endSquare == null || startSquare.getPiece() == null
                 || !startSquare.getPiece().canMove(board, startSquare, endSquare));
@@ -62,7 +64,9 @@ public class Game {
         startSquare.setPiece(null);
     }
 
+
     private void switchPlayer() {
+
         currentPlayer = (currentPlayer == player1) ? player2 : player1;
     }
 
