@@ -16,8 +16,9 @@ public class Player {
     }
 
 
-
-
+    public boolean isWhite() {
+        return false;
+    }
 }
 
 // Enum to represent player colors
