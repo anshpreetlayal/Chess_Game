@@ -15,10 +15,10 @@ public class Player {
         return color;
     }
 
-
     public boolean isWhite() {
-        return false;
+        return color == PlayerColor.WHITE;
     }
+
 }
 
 // Enum to represent player colors
