@@ -2,14 +2,17 @@ public class King extends Piece {
     private boolean castlingDone = false;
 
     public King(String color, Square currentPosition) {
+
         super(color, currentPosition);
     }
 
     public boolean isCastlingDone() {
+
         return this.castlingDone;
     }
 
     public void setCastlingDone(boolean castlingDone) {
+
         this.castlingDone = castlingDone;
     }
 
