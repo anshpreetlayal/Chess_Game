@@ -6,7 +6,11 @@ public class Rook extends Piece {
 
     @Override
     public boolean isValidMove(Square destination) {
-        return false;
+        // A rook can move either horizontally or vertically
+        int rowDiff = Math.abs(destination.getRow() - getCurrentPosition().getRow());
+        int colDiff = Math.abs(destination.getCol() - getCurrentPosition().getCol());
+
+        return (rowDiff == 0 && colDiff > 0) || (rowDiff > 0 && colDiff == 0);
     }
 
     @Override
