@@ -22,6 +22,14 @@ public class Pawn extends Piece {
 
     @Override
     public boolean canMove(Board board, Square start, Square end) {
-        return false;
+        // Check if the destination square is a valid move for the Pawn
+        if (!isValidMove(end)) {
+            return false;
+        }
+
+        // Check if the destination square is occupied by a piece of the same color
+        if (end.getPiece() != null && end.getPiece().isWhite() == isWhite()) {
+            return false;
+        }
     }
 }
