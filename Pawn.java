@@ -1,7 +1,5 @@
 public class Pawn extends Piece {
 
-
-
     public Pawn(String color, Square currentPosition) {
         super(color, currentPosition);
     }
@@ -10,6 +8,7 @@ public class Pawn extends Piece {
     public boolean isValidMove(Square destination) {
         int rowDiff = Math.abs(destination.getRow() - getCurrentPosition().getRow());
         int colDiff = Math.abs(destination.getCol() - getCurrentPosition().getCol());
+
 
         // Pawn can move forward by one square
         // or diagonally forward by one square to capture an opponent's piece
@@ -54,7 +53,6 @@ public class Pawn extends Piece {
             }
         }
 
-        // No other move is allowed
         return false;
     }
 }
