@@ -29,7 +29,7 @@ public class Board {
     public void placePiece(Piece piece, int row, int col) {
         if (isValidPosition(row, col)) {
             squares[row][col].setPiece(piece);
-            piece.setCurrentPosition(squares[row][col]);
+            piece.setCurrentPosition();
         }
     }
 
