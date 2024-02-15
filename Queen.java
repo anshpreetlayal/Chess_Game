@@ -12,7 +12,7 @@ public class Queen extends Piece{
         // Queen can move horizontally, vertically, or diagonally
         return rowDiff == 0 || colDiff == 0 || rowDiff == colDiff;
     }
-
+    
     @Override
     public boolean canMove(Board board, Square start, Square end) {
         // Check if the destination square is a valid move for the Queen
