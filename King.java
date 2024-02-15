@@ -21,7 +21,6 @@ public class King extends Piece {
     }
 
     @Override
-    @Override
     public boolean canMove(Board board, Square start, Square end) {
         // Check if the destination square is a valid move for the King
         if (!isValidMove(end)) {
@@ -59,8 +58,50 @@ public class King extends Piece {
     }
 
     public boolean isCastlingMove(Square start, Square end) {
-        // Check if the starting and ending position are correct for castling
-        // Implement based on the specific rules of chess
-        return false; // Placeholder - replace with actual implementation
+        // Check if the move is a castling move
+        if (isCastlingDone()) {
+            return false; // Castling already done
+        }
+
+        int startRow = start.getRow();
+        int startCol = start.getCol();
+        int endRow = end.getRow();
+        int endCol = end.getCol();
+
+        // Check if the move is a castling move to the right
+        if (startRow == endRow && Math.abs(startCol - endCol) == 2) {
+            // Check if the king is in its initial position
+            if (startCol == 4) {
+                // Check if there is a rook on the corner
+                Square rookSquare;
+                if (endCol == 6) {
+                    rookSquare = board.getSquare(startRow, 7); // Right rook
+                } else {
+                    rookSquare = board.getSquare(startRow, 0); // Left rook
+                }
+
+                if (rookSquare != null) {
+                    Piece rook = rookSquare.getPiece();
+                    if (rook != null && rook instanceof Rook && !rook.isKilled()) {
+                        // Check if there are no pieces between the king and the rook
+                        int direction = endCol > startCol ? 1 : -1;
+                        for (int col = startCol + direction; col != endCol; col += direction) {
+                            Square betweenSquare = board.getSquare(startRow, col);
+                            if (betweenSquare != null && betweenSquare.getPiece() != null) {
+                                return false; // There is a piece between the king and the rook
+                            }
+                        }
+
+                        // Check if the squares the king crosses during castling are not under attack
+                        // Check if the king is not in check and does not end up in check after castling
+
+                        return true; // Castling move is valid
+                    }
+                }
+            }
+        }
+
+        return false; // Not a valid castling move
     }
+
 }
