@@ -110,5 +110,17 @@ public class Main {
             return true; // Checkmate
         }
 
-
+    private static Piece findKing(boolean isWhite, Board board) {
+        // Iterate over all squares to find the king of the specified color
+        for (int row = 0; row < 8; row++) {
+            for (int col = 0; col < 8; col++) {
+                Square square = board.getSquare(row, col);
+                Piece piece = square.getPiece();
+                if (piece instanceof King && piece.isWhite() == isWhite) {
+                    return piece; // Found the king
+                }
+            }
+        }
+        return null; // King not found
+    }
     }
