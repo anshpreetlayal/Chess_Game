@@ -123,4 +123,19 @@ public class Main {
         }
         return null; // King not found
     }
+
+    private static boolean isUnderAttack(Square square, boolean isWhite, Board board) {
+        // Iterate over all squares to check if any opponent's piece can attack the specified square
+        for (int row = 0; row < 8; row++) {
+            for (int col = 0; col < 8; col++) {
+                Square attackerSquare = board.getSquare(row, col);
+                Piece attacker = attackerSquare.getPiece();
+                if (attacker != null && attacker.isWhite() != isWhite && attacker.canMove(board, attackerSquare, square)) {
+                    return true; // The square is under attack
+                }
+            }
+        }
+        return false; // The square is not under attack
     }
+    }
+
