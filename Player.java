@@ -12,10 +12,12 @@ public class Player {
     }
 
     public PlayerColor getColor() {
+
         return color;
     }
 
     public boolean isWhite() {
+
         return color == PlayerColor.WHITE;
     }
 

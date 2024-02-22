@@ -82,8 +82,33 @@ public class Main {
     }
 
     private static boolean isCheckmate(boolean isWhite, Board board) {
-        // Implement checkmate logic
-        return false; // Placeholder
-    }
+            // Find the king of the current player
+            Piece king = findKing(isWhite, board);
+            if (king == null) {
+                return false; // King not found (should not happen)
+            }
 
-}
+            // Check if the king is in check
+            Square kingSquare = king.getCurrentPosition();
+            if (!isUnderAttack(kingSquare, isWhite, board)) {
+                return false; // King is not in check
+            }
+
+            // Check if the king can move to safety
+            for (int row = kingSquare.getRow() - 1; row <= kingSquare.getRow() + 1; row++) {
+                for (int col = kingSquare.getCol() - 1; col <= kingSquare.getCol() + 1; col++) {
+                    if (row >= 0 && row < 8 && col >= 0 && col < 8) {
+                        Square destination = board.getSquare(row, col);
+                        if (king.canMove(board, kingSquare, destination)) {
+                            return false; // King can move to safety
+                        }
+                    }
+                }
+            }
+
+            // The king cannot move to safety, and no other piece can block the check
+            return true; // Checkmate
+        }
+
+
+    }
