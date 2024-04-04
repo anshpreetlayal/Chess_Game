@@ -69,7 +69,7 @@ public class Game {
     }
 
     private boolean isGameOver() {
-        return isCheckmate(player1) || isCheckmate(player2);
+        return isCheckmate(player1) || isCheckmate(player2) || isStalemate(player1) || isStalemate(player2);
     }
     private boolean isCheckmate(Player player) {
         Piece king = findKing(player);
@@ -91,6 +91,12 @@ public class Game {
         // Implement logic to check legal moves
         return false; // to be replaced with actual logic
     }
+
+    private boolean isStalemate(Player player) {
+        // Check if the player has no legal moves and is not in check
+        // Implement logic to check for stalemate
+        return false; // to ve replaced with actual logic
+    }
     private void displayBoard() {
             Square[][] squares = board.getSquares();
             System.out.println("Current Board:");
@@ -110,7 +116,8 @@ public class Game {
 
 
     private void displayResult() {
-        // have to Implement result display logic
-        System.out.println("Game Over! Display result here.");
-    }
+
+        }
+
+
 }
