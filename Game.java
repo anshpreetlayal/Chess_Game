@@ -116,8 +116,15 @@ public class Game {
 
 
     private void displayResult() {
-
+        if (isCheckmate(player1)) {
+            System.out.println("Player 1 is in checkmate. Player 2 wins!");
+        } else if (isCheckmate(player2)) {
+            System.out.println("Player 2 is in checkmate. Player 1 wins!");
+        } else if (isStalemate(player1) || isStalemate(player2)) {
+            System.out.println("Stalemate! The game is a draw.");
+        } else {
+            System.out.println("Game Over! Display result here.");
         }
-
+        }
 
 }
