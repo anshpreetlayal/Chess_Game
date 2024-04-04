@@ -16,8 +16,6 @@ public class Game {
     public void startGame() {
         System.out.println("Chess Game Started!");
 
-        // Additional setup or initialization if needed
-
         playGame();
     }
 
