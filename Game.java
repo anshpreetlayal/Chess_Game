@@ -80,6 +80,17 @@ public class Game {
         return false;
     }
 
+    private boolean isInCheck(Piece piece, Player player) {
+        // Check if the piece is under attack by opponent's pieces
+        // Implement logic to check if the piece is under attack
+        return false; // to be replaced with logic
+    }
+
+    private boolean hasLegalMoves(Piece piece, Player player) {
+        // Check if the piece has legal moves to escape check
+        // Implement logic to check legal moves
+        return false; // to be replaced with actual logic
+    }
     private void displayBoard() {
             Square[][] squares = board.getSquares();
             System.out.println("Current Board:");
