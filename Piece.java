@@ -38,5 +38,6 @@ public abstract class Piece {
     public abstract boolean canMove(Board board, Square start, Square end);
 
     public boolean getSymbol() {
+        return false;
     }
 }

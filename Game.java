@@ -69,7 +69,14 @@ public class Game {
     }
 
     private boolean isGameOver() {
-        // have to implement the rules
+        return isCheckmate(player1) || isCheckmate(player2);
+    }
+    private boolean isCheckmate(Player player) {
+        Piece king = findKing(player);
+        if (king != null && isInCheck(king, player)) {
+            // Check if the king has no legal moves to escape check
+            return !hasLegalMoves(king, player);
+        }
         return false;
     }
 
