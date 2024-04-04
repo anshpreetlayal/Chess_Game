@@ -74,10 +74,22 @@ public class Game {
     }
 
     private void displayBoard() {
-        // have to Implement board display logic
-        //  board.getSquares() to access the squares
-        System.out.println("Current Board:");
-    }
+            Square[][] squares = board.getSquares();
+            System.out.println("Current Board:");
+            for (int row = 0; row < squares.length; row++) {
+                for (int col = 0; col < squares[row].length; col++) {
+                    Square square = squares[row][col];
+                    Piece piece = square.getPiece();
+                    if (piece != null) {
+                        System.out.print(piece.getSymbol() + " ");
+                    } else {
+                        System.out.print("- ");
+                    }
+                }
+                System.out.println("Current Board:");
+            }
+        }
+
 
     private void displayResult() {
         // have to Implement result display logic

@@ -52,4 +52,8 @@ public class Board {
             System.out.println();
         }
     }
+
+    public Square[][] getSquares() {
+        return
+    }
 }
