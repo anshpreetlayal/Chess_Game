@@ -16,9 +16,10 @@ public abstract class Piece {
         return color;
     }
 
-    public void setCurrentPosition() {
-        this.currentPosition = currentPosition;
+    public void setCurrentPosition(Square newPosition) {
+        this.currentPosition = newPosition;
     }
+
     public Square getCurrentPosition() {
         return currentPosition;
     }
@@ -36,6 +37,7 @@ public abstract class Piece {
     }
 
     public abstract boolean canMove(Board board, Square start, Square end);
+
 
     public boolean getSymbol() {
         return false;
