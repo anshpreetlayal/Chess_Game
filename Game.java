@@ -72,7 +72,7 @@ public class Game {
         return isCheckmate(player1) || isCheckmate(player2) || isStalemate(player1) || isStalemate(player2);
     }
     private boolean isCheckmate(Player player) {
-        Piece king = findKing(player);
+        Piece king = Main.findKing(player);
         if (king != null && isInCheck(king, player)) {
             // Check if the king has no legal moves to escape check
             return !hasLegalMoves(king, player);

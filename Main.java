@@ -137,5 +137,19 @@ public class Main {
         }
         return false; // The square is not under attack
     }
+
+    public static Piece findKing(Player player, Board board) {
+        for (int row = 0; row < board.getNumRows(); row++) {
+            for (int col = 0; col < board.getNumCols(); col++) {
+                Square square = board.getSquare(row, col);
+                Piece piece = square.getPiece();
+                if (piece instanceof King && piece.getColor().equals(player.getColor())) {
+                    return piece; // Found the king
+                }
+            }
+        }
+        return null; // King not found
     }
+
+}
 

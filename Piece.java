@@ -6,25 +6,29 @@ public abstract class Piece {
 
     public Piece(String color, Square currentPosition) {
         this.color = color;
-        this.isWhite = "white".equalsIgnoreCase(color); // Derive isWhite from color
+        this.isWhite = "white".equalsIgnoreCase(color); 
         this.currentPosition = currentPosition;
     }
 
     public abstract boolean isValidMove(Square destination);
 
     public String getColor() {
+
         return color;
     }
 
     public void setCurrentPosition(Square newPosition) {
+
         this.currentPosition = newPosition;
     }
 
     public Square getCurrentPosition() {
+
         return currentPosition;
     }
 
     public boolean isWhite() {
+
         return this.isWhite;
     }
 
@@ -33,6 +37,7 @@ public abstract class Piece {
     }
 
     public void setKilled(boolean isKilled) {
+
         this.isKilled = isKilled;
     }
 
@@ -40,6 +45,13 @@ public abstract class Piece {
 
 
     public boolean getSymbol() {
+
         return false;
+    }
+
+    public void setCurrentPosition(int row, int col) {
+    }
+
+    public void setCurrentPosition() {
     }
 }

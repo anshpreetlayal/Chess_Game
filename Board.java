@@ -56,5 +56,11 @@ public class Board {
     public Square[][] getSquares() {
         return squares;
     }
+
+    public int getNumRows() {
+    }
+
+    public int getNumCols() {
+    }
 }
 
