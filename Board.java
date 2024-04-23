@@ -1,7 +1,10 @@
 public class Board {
     private final Square[][] squares;
-
+    private final int numRows;
+    private final int numCols;
     public Board(int numRows, int numCols) {
+        this.numRows = numRows;
+        this.numCols = numCols;
         this.squares = new Square[numRows][numCols];
         initializeBoard();
     }
@@ -58,9 +61,12 @@ public class Board {
     }
 
     public int getNumRows() {
+        return numRows;
     }
 
     public int getNumCols() {
+        return numCols;
+
     }
 }
 
