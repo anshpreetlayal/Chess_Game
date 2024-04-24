@@ -139,7 +139,7 @@ public class Main {
     }
 
     public static Piece findKing(Player player) {
-        Board board = null;
+        Board board = player.getGame().getBoard();
         for (int row = 0; row < board.getNumRows(); row++) {
             for (int col = 0; col < board.getNumCols(); col++) {
                 Square square = board.getSquare(row, col);
@@ -151,6 +151,9 @@ public class Main {
         }
         return null; // King not found
     }
+
+
+
 
 }
 
