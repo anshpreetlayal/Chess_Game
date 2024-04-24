@@ -138,7 +138,8 @@ public class Main {
         return false; // The square is not under attack
     }
 
-    public static Piece findKing(Player player, Board board) {
+    public static Piece findKing(Player player) {
+        Board board = null;
         for (int row = 0; row < board.getNumRows(); row++) {
             for (int col = 0; col < board.getNumCols(); col++) {
                 Square square = board.getSquare(row, col);
