@@ -33,6 +33,7 @@ public abstract class Piece {
     }
 
     public boolean isKilled() {
+
         return this.isKilled;
     }
 
