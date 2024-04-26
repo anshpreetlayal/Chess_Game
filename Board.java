@@ -68,5 +68,8 @@ public class Board {
         return numCols;
 
     }
+
+    public boolean isValidSquare(int row, int col) {
+    }
 }
 

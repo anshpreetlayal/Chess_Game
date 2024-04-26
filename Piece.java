@@ -42,7 +42,27 @@ public abstract class Piece {
         this.isKilled = isKilled;
     }
 
-    public abstract boolean canMove(Board board, Square start, Square end);
+    public boolean canMove(Board board, Square start, Square end) {
+        // Check if the destination square is occupied by own piece
+        if (end.getPiece() != null && end.getPiece().isWhite() == this.isWhite()) {
+            return false; // Cannot capture own piece
+        }
+
+        // Check if the move is within the board boundaries
+        if (!board.isValidSquare(end.getRow(), end.getCol())) {
+            return false; // Invalid destination square
+        }
+
+        // Check if the piece has a valid path to the destination square (e.g., no obstacles)
+        if (!isValidPath(board, start, end)) {
+            return false; // Path is blocked
+        }
+
+        // Add specific logic for each piece type (e.g., Pawn, Knight, Bishop, Rook, Queen, King)
+        return true; // Default implementation, override in subclasses
+    }
+
+
 
 
     public boolean getSymbol() {
