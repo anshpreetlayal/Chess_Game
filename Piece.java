@@ -62,6 +62,36 @@ public abstract class Piece {
         return true; // Default implementation, override in subclasses
     }
 
+    private boolean isValidPath(Board board, Square start, Square end) {
+        int startRow = start.getRow();
+        int startCol = start.getCol();
+        int endRow = end.getRow();
+        int endCol = end.getCol();
+
+        // Rook moves vertically or horizontally
+        if (startRow == endRow) { // Horizontal move
+            int minCol = Math.min(startCol, endCol);
+            int maxCol = Math.max(startCol, endCol);
+            for (int col = minCol + 1; col < maxCol; col++) {
+                if (board.getSquare(startRow, col).getPiece() != null) {
+                    return false; // Path is blocked
+                }
+            }
+        } else if (startCol == endCol) { // Vertical move
+            int minRow = Math.min(startRow, endRow);
+            int maxRow = Math.max(startRow, endRow);
+            for (int row = minRow + 1; row < maxRow; row++) {
+                if (board.getSquare(row, startCol).getPiece() != null) {
+                    return false; // Path is blocked
+                }
+            }
+        } else {
+            // Invalid move for a rook (shouldn't happen)
+            return false;
+        }
+
+        return true; // Path is clear
+    }
 
 
 
