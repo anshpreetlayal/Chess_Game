@@ -43,7 +43,7 @@ public class Main {
             Square startSquare = board.getSquare(startRow, startCol);
 
             if (startSquare == null || startSquare.getPiece() == null || startSquare.getPiece().isWhite() != player.isWhite()) {
-                System.out.println("Invalid piece. Please try again.");
+                System.out.println("Invalid piece or not your turn. Please try again.");
                 continue;
             }
 
@@ -68,7 +68,7 @@ public class Main {
             Piece piece = startSquare.getPiece();
             endSquare.setPiece(piece);
             startSquare.setPiece(null);
-            piece.setCurrentPosition();
+            piece.setCurrentPosition(endSquare);
 
             // Check for checkmate
             if (isCheckmate(player.isWhite(), board)) {
@@ -80,6 +80,7 @@ public class Main {
             break;
         }
     }
+
 
     private static boolean isCheckmate(boolean isWhite, Board board) {
             // Find the king of the current player
