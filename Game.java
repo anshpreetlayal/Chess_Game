@@ -132,4 +132,47 @@ public class Game {
         }
 
 
+    private boolean isInCheck(Piece piece, Player player) {
+        // Get the opponent's color
+        PlayerColor opponentColor = (player == player1) ? PlayerColor.BLACK : PlayerColor.WHITE;
+
+        // Get all squares on the board
+        Square[][] squares = board.getSquares();
+
+        // Iterate through all squares to find opponent's pieces and check if they can attack the piece
+        for (Square[] row : squares) {
+            for (Square square : row) {
+                Piece attacker = square.getPiece();
+                if (attacker != null && attacker.getColor() == opponentColor && attacker.canMove(board, square, piece.getCurrentPosition())) {
+                    return true; // Piece is under attack
+                }
+            }
+        }
+        return false; // Piece is not under attack
+    }
+
+    private boolean hasLegalMoves(Piece piece, Player player) {
+        // Get all squares on the board
+        Square[][] squares = board.getSquares();
+
+        // Iterate through all squares to check if the piece has any legal moves
+        for (Square[] row : squares) {
+            for (Square square : row) {
+                if (piece.canMove(board, piece.getCurrentPosition(), square)) {
+                    // Simulate the move and check if the king is still in check
+                    Piece currentPiece = square.getPiece();
+                    square.setPiece(piece);
+                    piece.getCurrentPosition().setPiece(null);
+                    boolean legalMove = !isInCheck(Main.findKing(player), player);
+                    square.setPiece(currentPiece);
+                    piece.getCurrentPosition().setPiece(piece);
+                    if (legalMove) {
+                        return true; // Piece has legal moves
+                    }
+                }
+            }
+        }
+        return false; // Piece has no legal moves
+    }
+
 }
