@@ -9,22 +9,27 @@ public class Player {
     }
 
     public String getName() {
+
         return name;
     }
 
     public PlayerColor getColor() {
+
         return color;
     }
 
     public boolean isWhite() {
+
         return color == PlayerColor.WHITE;
     }
 
     public Game getGame() {
+
         return game;
     }
 
     public void setGame(Game game) {
+
         this.game = game;
     }
 }

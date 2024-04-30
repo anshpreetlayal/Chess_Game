@@ -2,6 +2,7 @@ public class Board {
     private final Square[][] squares;
     private final int numRows;
     private final int numCols;
+
     public Board(int numRows, int numCols) {
         this.numRows = numRows;
         this.numCols = numCols;
@@ -26,19 +27,23 @@ public class Board {
     }
 
     public boolean isValidPosition(int row, int col) {
-        return row >= 0 && row < squares.length && col >= 0 && col < squares[0].length;
+        return row >= 0 && row < numRows && col >= 0 && col < numCols;
     }
 
     public void placePiece(Piece piece, int row, int col) {
         if (isValidPosition(row, col)) {
             squares[row][col].setPiece(piece);
             piece.setCurrentPosition(row, col);
+        } else {
+            System.out.println("Invalid position for placing piece.");
         }
     }
 
     public void removePiece(int row, int col) {
         if (isValidPosition(row, col)) {
             squares[row][col].setPiece(null);
+        } else {
+            System.out.println("Invalid position for removing piece.");
         }
     }
 
@@ -66,12 +71,9 @@ public class Board {
 
     public int getNumCols() {
         return numCols;
-
     }
 
     public boolean isValidSquare(int row, int col) {
         return row >= 0 && row < numRows && col >= 0 && col < numCols;
     }
-
 }
-
