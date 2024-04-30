@@ -87,4 +87,10 @@ public abstract class Piece {
     }
 
     public abstract String getSymbol();
+
+    public enum PieceColor {
+        WHITE, // Represents the white color for chess pieces
+        BLACK  // Represents the black color for chess pieces
+    }
+
 }
