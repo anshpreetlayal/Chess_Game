@@ -1,46 +1,39 @@
 public abstract class Piece {
-    private final boolean isWhite;
-    private final String color;
+    private final PieceColor color;
     private Square currentPosition;
     private boolean isKilled = false;
 
-    public Piece(String color, Square currentPosition) {
+    public Piece(PieceColor color, Square currentPosition) {
         this.color = color;
-        this.isWhite = "white".equalsIgnoreCase(color); 
         this.currentPosition = currentPosition;
     }
 
     public abstract boolean isValidMove(Square destination);
 
-    public String getColor() {
-
+    public PieceColor getColor() {
         return color;
     }
 
     public void setCurrentPosition(Square newPosition) {
-
         this.currentPosition = newPosition;
     }
 
     public Square getCurrentPosition() {
-
         return currentPosition;
     }
 
     public boolean isWhite() {
-
-        return this.isWhite;
+        return color == PieceColor.WHITE;
     }
 
     public boolean isKilled() {
-
-        return this.isKilled;
+        return isKilled;
     }
 
     public void setKilled(boolean isKilled) {
-
         this.isKilled = isKilled;
     }
+
 
     public boolean canMove(Board board, Square start, Square end) {
         // Check if the destination square is occupied by own piece
@@ -93,16 +86,5 @@ public abstract class Piece {
         return true; // Path is clear
     }
 
-
-
-    public boolean getSymbol() {
-
-        return false;
-    }
-
-    public void setCurrentPosition(int row, int col) {
-    }
-
-    public void setCurrentPosition() {
-    }
+    public abstract String getSymbol();
 }
