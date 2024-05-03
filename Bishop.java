@@ -19,4 +19,9 @@ public class Bishop extends Piece{
 
         return false;
     }
+
+    @Override
+    public String getSymbol() {
+        return null;
+    }
 }

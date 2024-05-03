@@ -10,6 +10,8 @@ public class Board {
         initializeBoard();
     }
 
+
+
     private void initializeBoard() {
         for (int row = 0; row < squares.length; row++) {
             for (int col = 0; col < squares[row].length; col++) {
@@ -32,8 +34,9 @@ public class Board {
 
     public void placePiece(Piece piece, int row, int col) {
         if (isValidPosition(row, col)) {
-            squares[row][col].setPiece(piece);
-            piece.setCurrentPosition(row, col);
+            Square square = squares[row][col];
+            square.setPiece(piece);
+            piece.setCurrentPosition(square);
         } else {
             System.out.println("Invalid position for placing piece.");
         }
