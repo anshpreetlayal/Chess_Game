@@ -55,7 +55,7 @@ public class Board {
             for (Square square : row) {
                 Piece piece = square.getPiece();
                 if (piece != null) {
-                    System.out.print(piece.getColor().charAt(0) + " ");
+                    System.out.print(piece.getColor().name().charAt(0) + " "); // Use enum value directly
                 } else {
                     System.out.print("- ");
                 }
@@ -63,6 +63,7 @@ public class Board {
             System.out.println();
         }
     }
+
 
     public Square[][] getSquares() {
         return squares;
