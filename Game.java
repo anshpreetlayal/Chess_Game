@@ -96,11 +96,20 @@ public class Game {
      //   return false; // to be replaced with actual logic
    // }
 
-   // private boolean isStalemate(Player player) {
-        // Check if the player has no legal moves and is not in check
 
-   //     return false; // to ve replaced with actual logic
- //   }
+
+    private boolean isStalemate(Player player) {
+        // Check if the player has legal moves but is not in check
+        for (Square[] row : board.getSquares()) {
+            for (Square square : row) {
+                Piece piece = square.getPiece();
+                if (piece != null && piece.getColor() == player.getColor() && hasLegalMoves(piece, player)) {
+                    return false; // Player has at least one legal move
+                }
+            }
+        }
+        return true; // Player has no legal moves
+    }
     private void displayBoard() {
             Square[][] squares = board.getSquares();
             System.out.println("Current Board:");
