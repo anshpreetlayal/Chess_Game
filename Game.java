@@ -110,6 +110,25 @@ public class Game {
         }
         return true; // Player has no legal moves
     }
+
+    private boolean isInCheck(Piece piece, Player player) {
+        // Get the opponent's color
+        PlayerColor opponentColor = (player == player1) ? PlayerColor.BLACK : PlayerColor.WHITE;
+
+        // Get all squares on the board
+        Square[][] squares = board.getSquares();
+
+        // Iterate through all squares to find opponent's pieces and check if they can attack the piece
+        for (Square[] row : squares) {
+            for (Square square : row) {
+                Piece attacker = square.getPiece();
+                if (attacker != null && attacker.getColor() == opponentColor && attacker.canMove(board, square, piece.getCurrentPosition())) {
+                    return true; // Piece is under attack
+                }
+            }
+        }
+        return false; // Piece is not under attack
+    }
     private void displayBoard() {
             Square[][] squares = board.getSquares();
             System.out.println("Current Board:");
