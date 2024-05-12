@@ -68,7 +68,7 @@ public class Main {
             Piece piece = startSquare.getPiece();
             endSquare.setPiece(piece);
             startSquare.setPiece(null);
-            piece.setCurrentPosition(endSquare);
+            piece.setCurrentPosition();
 
             // Check for checkmate
             if (isCheckmate(player.isWhite(), board)) {

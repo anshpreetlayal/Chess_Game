@@ -1,7 +1,7 @@
 public class Rook extends Piece {
 
     public Rook(String color, Square currentPosition) {
-        super(color, currentPosition);
+        super(PieceColor.valueOf(color), currentPosition);
     }
 
     @Override
@@ -51,6 +51,11 @@ public class Rook extends Piece {
         }
 
         return true;
+    }
+
+    @Override
+    public String getSymbol() {
+        return null;
     }
 
 }

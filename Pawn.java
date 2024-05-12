@@ -1,7 +1,7 @@
 public class Pawn extends Piece {
 
     public Pawn(String color, Square currentPosition) {
-        super(color, currentPosition);
+        super(PieceColor.valueOf(color), currentPosition);
     }
 
     @Override
@@ -12,7 +12,7 @@ public class Pawn extends Piece {
 
         // Pawn can move forward by one square
         // or diagonally forward by one square to capture an opponent's piece
-        if (getColor().equalsIgnoreCase("white")) {
+        if (getColor().equals("white")) {
             return (rowDiff == 1 && colDiff == 0) || (rowDiff == 1 && colDiff == 1);
         } else {
             return (rowDiff == -1 && colDiff == 0) || (rowDiff == -1 && colDiff == 1);
@@ -54,5 +54,10 @@ public class Pawn extends Piece {
         }
 
         return false;
+    }
+
+    @Override
+    public String getSymbol() {
+        return null;
     }
 }

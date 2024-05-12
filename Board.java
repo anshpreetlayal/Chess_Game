@@ -36,7 +36,7 @@ public class Board {
         if (isValidPosition(row, col)) {
             Square square = squares[row][col];
             square.setPiece(piece);
-            piece.setCurrentPosition(square);
+            piece.setCurrentPosition();
         } else {
             System.out.println("Invalid position for placing piece.");
         }

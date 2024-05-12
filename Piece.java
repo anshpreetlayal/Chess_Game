@@ -14,7 +14,7 @@ public abstract class Piece {
         return color;
     }
 
-    public void setCurrentPosition(Square newPosition) {
+    public void setCurrentPosition() {
         this.currentPosition = newPosition;
     }
 
