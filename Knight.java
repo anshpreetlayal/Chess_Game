@@ -1,7 +1,7 @@
 public class Knight extends Piece {
 
     public Knight(String color, Square currentPosition) {
-        super(color, currentPosition);
+        super(PieceColor.valueOf(color), currentPosition);
     }
 
     @Override
@@ -17,6 +17,11 @@ public class Knight extends Piece {
     public boolean canMove(Board board, Square start, Square end) {
         // Check if the destination square is a valid move for the Knight
         return isValidMove(end) && (end.getPiece() == null || end.getPiece().isWhite() != this.isWhite());
+    }
+
+    @Override
+    public String getSymbol() {
+        return null;
     }
 
 }

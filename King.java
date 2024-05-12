@@ -3,7 +3,7 @@ public class King extends Piece {
     private Board board; // Define the board field
 
     public King(String color, Square currentPosition, Board board) {
-        super(color, currentPosition);
+        super(PieceColor.valueOf(color), currentPosition);
         this.board = board;
     }
 
@@ -49,6 +49,11 @@ public class King extends Piece {
         // Implement as needed based on the specific rules of chess
 
         return true;
+    }
+
+    @Override
+    public String getSymbol() {
+        return null;
     }
 
     private boolean isSquareUnderAttack(Board board, Square square) {
