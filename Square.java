@@ -13,12 +13,12 @@ public class Square {
             return piece;
         }
 
-        public void setPiece(Piece piece) {
-            this.piece = piece;
-            if (piece != null) {
-                piece.setCurrentPosition();
-            }
+    public void setPiece(Piece piece) {
+        this.piece = piece;
+        if (piece != null) {
+            piece.setCurrentPosition(this);
         }
+    }
 
         public int getRow() {
             return row;
